@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Evryviadis Liapis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #121212;
+            color: #ffffff;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #1e1e1e;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.7);
+        }
+        h1, h2 {
+            color: #ffffff;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #333;
+            color: #ffffff;
+            padding: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        .toggle-btn {
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 1.2em;
+            cursor: pointer;
+            outline: none;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .contact-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .contact-info img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+        }
+        .contact-info p {
+            margin: 5px 0;
+        }
+        a {
+            color: #1e90ff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .content {
+            height: 0;
+            overflow: hidden;
+            transition: height 0.3s ease-out;
+        }
+        .content.open {
+            height: auto;
+            transition: height 0.3s ease-in;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="contact-info">
+            <img src="https://media.licdn.com/dms/image/D4E03AQEkyiDbNhW7JQ/profile-displayphoto-shrink_800_800/0/1709306406589?e=1726099200&v=beta&t=kcQiB25tE5eS3-YFZp0wP7i2xDNtSutkQyB_YFSct20" alt="Profile Picture">
+            <div>
+                <h1>Evryviadis Liapis</h1>
+                <p><strong>Phone:</strong> +30 6945606888</p>
+                <p><strong>Email:</strong> <a href="mailto:evris@liapis.info">evris@liapis.info</a></p>
+                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/evryviadis-liapis-2615b42b3/" target="_blank">Evryviadis Liapis</a></p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title" onclick="toggleSection(this)">
+                <span>Professional Summary</span>
+                <button class="toggle-btn">+</button>
+            </div>
+            <div class="content">
+                <p>Experienced developer in Node.js, Vue.js, and database management with MongoDB and MySQL. Holds academic experience in C, professional experience in JavaScript, and a strong personal background in Python since a young age. Eager to join a knowledgeable team to further enhance skills and contribute to innovative development projects.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title" onclick="toggleSection(this)">
+                <span>Education</span>
+                <button class="toggle-btn">+</button>
+            </div>
+            <div class="content">
+                <ul>
+                    <li>
+                        <strong>Currently Studing Electrical and Computer Engineering</strong><br>
+                        University of Thessaly, Greece<br>
+                        Year: 3rd<br>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title" onclick="toggleSection(this)">
+                <span>Work Experience</span>
+                <button class="toggle-btn">+</button>
+            </div>
+            <div class="content">
+                <ul>
+                    <li>
+                        <strong>Software Engineer</strong><br>
+                        w360, Volos<br>
+                        January, 2024 - present
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title" onclick="toggleSection(this)">
+                <span>Skills</span>
+                <button class="toggle-btn">+</button>
+            </div>
+            <div class="content">
+                <ul>
+                    <li><strong>Technical Skills:</strong> Node.js, Git, Vue.js, Database Management: MongoDB, MySQL, API Development, Linux, AWS</li>
+                    <li><strong>Programming Languages:</strong> C (Educational Projects), JavaScript (Professional Use), Python (Everyday Use)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title" onclick="toggleSection(this)">
+                <span>Projects</span>
+                <button class="toggle-btn">+</button>
+            </div>
+            <div class="content">
+                <ul>
+                    <li>Created a RESTful API with Node.js and Express, integrated with a MongoDB database for an application.</li>
+                    <li>Created a Web site for auctions with commenting and users</li>
+                    <li>Built a reaction game using Vue.js</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title" onclick="toggleSection(this)">
+                <span>Additional Information</span>
+                <button class="toggle-btn">+</button>
+            </div>
+            <div class="content">
+                <ul>
+                    <li><strong>Courses:</strong> CS50w, Harvard University</li>
+                    <li><strong>Languages:</strong> Greek (Native), English (Fluent)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleSection(element) {
+            const content = element.nextElementSibling;
+            const button = element.querySelector('.toggle-btn');
+            
+            if (content.style.height && content.style.height !== '0px') {
+                content.style.height = '0px';
+                button.textContent = '+';
+            } else {
+                content.style.height = content.scrollHeight + 'px';
+                button.textContent = '-';
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll(".content");
+            sections.forEach(section => {
+                section.style.height = "0px";
+            });
+        });
+    </script>
+</body>
+</html>
